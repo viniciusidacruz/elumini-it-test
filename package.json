@@ -63,6 +63,11 @@
     "moduleNameMapper":{
       "\\.(css|less|scss|sass)$": "identity-obj-proxy" 
     },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "*/*.{ts,tsx}",
+      "!**/node_modules/**"
+    ],
     "setupFilesAfterEnv": [
       "<rootDir>/setup-tests.js"
     ]
