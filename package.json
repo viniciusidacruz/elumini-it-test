@@ -1,8 +1,12 @@
 {
   "name": "elumini-it-test",
-  "private": false,
   "version": "1.0.0",
-  "type": "module",
+  "engines": {
+    "node": ">=18.8.0",
+    "npm": "10.2.3",
+    "yarn": "please-use-npm",
+    "pnpm": "please-use-npm"
+  },
   "scripts": {
     "start": "vite",
     "first-install": "npx husky install && npm install",
