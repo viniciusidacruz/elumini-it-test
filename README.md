@@ -38,7 +38,7 @@ nvm use
 Primeiramente, uma vez que as configurações estejam conforme desejado, basta executar o seguinte comando:
 
 ```
-npm install && npm run dev
+npm install && npm run start
 ```
 
 ## Finalização
