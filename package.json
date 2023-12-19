@@ -19,6 +19,7 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
+    "lucide-react": "^0.298.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -60,8 +61,8 @@
   },
   "jest": {
     "testEnvironment": "jsdom",
-    "moduleNameMapper":{
-      "\\.(css|less|scss|sass)$": "identity-obj-proxy" 
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
     },
     "collectCoverage": true,
     "collectCoverageFrom": [
