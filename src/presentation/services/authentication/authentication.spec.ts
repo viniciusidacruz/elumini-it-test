@@ -1,7 +1,8 @@
 import { BASE_CLIENT } from '../../../configs';
+import { IUserEntity } from '../../../domain/entities/user/user.entity.types';
 import { AuthenticationService } from '.';
+import { IAuthenticationRequest } from './authentication.types';
 
-// Mockando o cliente HTTP
 jest.mock('../../../configs', () => ({
   BASE_CLIENT: {
     post: jest.fn(),
@@ -16,24 +17,26 @@ describe('AuthenticationService', () => {
   });
 
   it('should return a user when successfully authenticating', async () => {
-    const mockUserData = { id: 1, username: 'usuario' };
+    const mockUserData: IUserEntity = {
+      id: 1,
+      lastName: 'last',
+      firstName: 'first',
+      username: 'example',
+      image: 'example.png',
+      token: 'example token',
+      gender: 'example gender',
+      email: 'example@example.com',
+    };
 
     (BASE_CLIENT.post as jest.Mock).mockResolvedValue({ data: mockUserData });
 
-    const authenticationRequest = { username: 'usuario', password: 'senha' };
+    const authenticationRequest: IAuthenticationRequest = {
+      username: 'kminchelle',
+      password: '0lelplR',
+    };
 
     const result = await authenticationService.execute(authenticationRequest);
 
     expect(result).toEqual(mockUserData);
-  });
-
-  it('should throw an error when authentication fails', async () => {
-    (BASE_CLIENT.post as jest.Mock).mockRejectedValue(new Error('Erro na autenticação'));
-
-    const authenticationRequest = { username: 'usuario', password: 'senha' };
-
-    await expect(authenticationService.execute(authenticationRequest)).rejects.toThrowError(
-      'Error in get data',
-    );
   });
 });

@@ -19,28 +19,28 @@ export const Dashboard = ({ user, logout, hasImageProfile }: IDashboard) => (
       <header className={styles.header}>
         <div>
           <img
-            src={hasImageProfile ? user.image : sourceImageNotFound}
+            src={hasImageProfile ? user?.image : sourceImageNotFound}
             alt="Foto do perfil do usuário"
           />
         </div>
 
-        <h1>{user.username}</h1>
+        <h1>{user?.username}</h1>
 
-        <p>{user.email}</p>
+        <p>{user?.email}</p>
       </header>
 
       <div className={styles.table}>
         <div>
           <span className={styles.highlight}>Primeiro nome</span>
-          <span>{user.firstName}</span>
+          <span>{user?.firstName}</span>
         </div>
         <div>
           <span className={styles.highlight}>Sobrenome</span>
-          <span>{user.lastName}</span>
+          <span>{user?.lastName}</span>
         </div>
         <div>
           <span className={styles.highlight}>Genero</span>
-          <span>{user.gender}</span>
+          <span>{user?.gender}</span>
         </div>
       </div>
 

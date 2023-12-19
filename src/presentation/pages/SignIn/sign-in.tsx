@@ -29,6 +29,7 @@ export const SignIn = ({ handleSubmit, onSubmit, register, errors, isLoading }: 
           {...register('password')}
           placeholder="Insira sua senha..."
           message={errors?.password?.message}
+          isPassword
         />
 
         <Button isLoading={isLoading}>Entrar</Button>

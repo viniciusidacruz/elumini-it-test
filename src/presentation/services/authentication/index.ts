@@ -10,9 +10,14 @@ export class AuthenticationService {
         username,
       });
 
-      return data;
+      if (data) {
+        return data;
+      }
+
+      return new Error('Erro ao validar credenciais');
     } catch (err) {
-      throw new Error('Error in get data');
+      console.error(err);
+      return new Error((err as { message: string }).message || 'Erro ao validar credenciais');
     }
   }
 }
