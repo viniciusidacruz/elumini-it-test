@@ -16,7 +16,7 @@ export function DashboardContainer() {
     firstName: 'First',
     gender: '',
     lastName: '',
-    username: '',
+    username: 'example',
   });
 
   return <Dashboard logout={signOut} hasImageProfile={hasImageProfile} user={user} />;
