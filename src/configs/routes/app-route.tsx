@@ -6,6 +6,6 @@ import { ROUTES } from './routes';
 export const AppRoute = () => (
   <Routes>
     <Route path={ROUTES.sign_in.path} element={<Pages.SignInContainer />} />
-    <Route path={ROUTES.dashboard.path} element={<Pages.Dashboard />} />
+    <Route path={ROUTES.dashboard.path} element={<Pages.DashboardContainer />} />
   </Routes>
 );
