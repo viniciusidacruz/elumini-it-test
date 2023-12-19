@@ -1,23 +1,19 @@
-import { UserEntity } from '../../../domain/entities/user';
+import { useNavigate } from 'react-router-dom';
+
+import { useAuthStore } from '../../stores';
 import { Dashboard } from './dashboard';
 
 export function DashboardContainer() {
-  function signOut() {
-    console.log('signOut');
+  const { user, signOut } = useAuthStore();
+  const navigate = useNavigate();
+
+  function logout() {
+    signOut();
+
+    navigate('/');
   }
 
-  const hasImageProfile = false;
+  const hasImageProfile = !!user?.image;
 
-  const user = new UserEntity({
-    id: 1,
-    email: 'example@gmail.com',
-    image: '',
-    token: 'example',
-    firstName: 'First',
-    gender: '',
-    lastName: '',
-    username: 'example',
-  });
-
-  return <Dashboard logout={signOut} hasImageProfile={hasImageProfile} user={user} />;
+  return <Dashboard logout={logout} hasImageProfile={hasImageProfile} user={user} />;
 }
