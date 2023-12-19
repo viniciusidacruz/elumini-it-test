@@ -1,3 +1,9 @@
-import { TextField } from './presentation/components';
+import { BrowserRouter } from 'react-router-dom';
 
-export const App = () => <TextField isPassword label="Example" message="Teste" required />;
+import { AppRoute } from './configs';
+
+export const App = () => (
+  <BrowserRouter>
+    <AppRoute />
+  </BrowserRouter>
+);
