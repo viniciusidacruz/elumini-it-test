@@ -2,9 +2,9 @@ import '@testing-library/jest-dom';
 
 import { act, fireEvent, render, waitFor } from '@testing-library/react';
 
-import { SignIn } from '.';
+import { SignInContainer } from '.';
 
-const sut = () => <SignIn />;
+const sut = () => <SignInContainer />;
 
 describe('SignIn', () => {
   it('should be correct render component', () => {
