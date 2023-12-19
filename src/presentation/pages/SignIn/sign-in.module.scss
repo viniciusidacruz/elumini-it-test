@@ -17,6 +17,12 @@
     & > section {
         max-width: 380px;
         width: 100%;
+
+        background-color: var(--white);
+        
+        padding: 2rem;
+
+        border-radius: var(--border-radius);
     }
 }
 
