@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
+import { ROUTES } from '../../../configs/routes/routes';
 import { useAuthStore } from '../../stores';
 import { Dashboard } from './dashboard';
 
@@ -10,7 +11,7 @@ export function DashboardContainer() {
   function logout() {
     signOut();
 
-    navigate('/');
+    navigate(ROUTES.sign_in.path);
   }
 
   const hasImageProfile = !!user?.image;

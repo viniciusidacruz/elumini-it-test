@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 
 import { act, fireEvent, render } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 
 import { UserEntity } from '../../../domain/entities/user';
 import { IUserEntity } from '../../../domain/entities/user/user.entity.types';
@@ -9,7 +10,9 @@ import { Dashboard } from './dashboard';
 const mockFn = jest.fn();
 
 const sut = (user: IUserEntity, hasImageProfile: boolean = false) => (
-  <Dashboard logout={mockFn} user={user} hasImageProfile={hasImageProfile} />
+  <BrowserRouter>
+    <Dashboard logout={mockFn} user={user} hasImageProfile={hasImageProfile} />
+  </BrowserRouter>
 );
 
 describe('Dashboard', () => {

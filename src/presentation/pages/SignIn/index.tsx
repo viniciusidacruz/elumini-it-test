@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
+import { ROUTES } from '../../../configs/routes/routes';
 import { useAuthStore } from '../../stores';
 import { SignIn } from './sign-in';
 import { initialValues, schema, TData } from './sign-in.utils';
@@ -27,7 +28,7 @@ export function SignInContainer() {
 
     await signIn(username, password);
 
-    navigate('/dashboard');
+    navigate(ROUTES.dashboard.path);
   }, []);
 
   return (

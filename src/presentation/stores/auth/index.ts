@@ -10,28 +10,31 @@ export const useAuthStore = create<IAuhStore>()(
   persist(
     (set) => ({
       user: null,
-      isAuthenticated: false,
+      error: '',
       signIn: async (usernameField, password) => {
         const authenticationService = new AuthenticationService();
 
-        const response = await authenticationService.execute({ username: usernameField, password });
+        authenticationService.execute({ username: usernameField, password }).then((response) => {
+          if (response instanceof Error) {
+            alert(response.message);
+          } else {
+            const { id, image, email, firstName, gender, lastName, token, username } =
+              new UserEntity(response);
 
-        const { id, image, email, firstName, gender, lastName, token, username } = new UserEntity(
-          response,
-        );
-
-        set(() => ({
-          user: {
-            id,
-            image,
-            email,
-            token,
-            gender,
-            lastName,
-            username,
-            firstName,
-          },
-        }));
+            set(() => ({
+              user: {
+                id,
+                image,
+                email,
+                token,
+                gender,
+                lastName,
+                username,
+                firstName,
+              },
+            }));
+          }
+        });
       },
       signOut: () => {
         localStorage.removeItem(STORAGE.user);
