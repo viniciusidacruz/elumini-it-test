@@ -1,0 +1,16 @@
+.container {
+    color: var(--white);
+    background-color: var(--primary-500);
+
+    padding: .875rem;
+
+    border: none;
+    border-radius: var(--border-radius);
+
+    min-width: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
