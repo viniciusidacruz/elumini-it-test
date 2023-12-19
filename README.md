@@ -24,8 +24,8 @@ Antes de iniciar o projeto, você pode encontrar um erro ao tentar instalar as d
 
 | Ferramentas | Versão         |
 | ----------- | -------------- |
-| node        | 18.8.0         |
-| npm         | 8.1.0          |
+| node        | 18.19.0        |
+| npm         | 10.2.3         |
 | yarn        | não funcionara |
 | pnpm        | não funcionara |
 
