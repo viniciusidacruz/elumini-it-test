@@ -50,3 +50,7 @@ E, por último, após realizar todo o fluxo manualmente no projeto e confirmar q
 ```
 npm run test
 ```
+
+## Referências
+
+[Página de Login](https://dribbble.com/shots/23081928-Reset-password-Untitled-UI)
