@@ -3,11 +3,15 @@ import { limitText } from '../../utils';
 import styles from './avatar.module.scss';
 import { IAvatar } from './avatar.types';
 
-export function Avatar({
-  email = 'viniciusitalodacruz@gmail.com',
-  name = 'Vinicius Italo',
-  imageProfile = '',
-}: IAvatar) {
+/**
+ * @description Componente de avatar para exibir algumas informações do usuário como: imagem, nome e email.
+ *
+ * @param name propriedade para exibir o nome do usuário logado
+ * @param email propriedade para exibir o email do usuário logado
+ * @param imageProfile propriedade para exibira foto do usuário logado
+ */
+
+export function Avatar({ email = '', name = '', imageProfile = '' }: IAvatar) {
   const hasName = !!name.length;
   const hasEmail = !!email.length;
   const hasUserInformations = hasEmail || hasName;
