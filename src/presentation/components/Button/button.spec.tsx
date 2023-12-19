@@ -30,11 +30,9 @@ describe('Button', () => {
   });
 
   it('should be render button disabled if exists params isLoading', () => {
-    const { getByTestId, debug } = render(sut(true));
+    const { getByTestId } = render(sut(true));
 
     const buttonContainer = getByTestId(/button/i);
-
-    debug();
 
     expect(buttonContainer).toHaveProperty('disabled');
   });
