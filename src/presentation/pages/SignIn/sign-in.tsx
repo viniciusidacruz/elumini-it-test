@@ -2,6 +2,16 @@ import { Button, TextField } from '../../components';
 import styles from './sign-in.module.scss';
 import { ISignIn } from './sign-in.types';
 
+/**
+ * @description Componente final da página de sign in
+ *
+ * @param handleSubmit propriedade nativa da lib react-hook-form para enviar dados
+ * @param onSubmit propriedade função callback para pegar os dados enviados no formulário
+ * @param register propriedade nativa da lib react-hook-form para setar os inputs
+ * @param errors propriedade nativa da lib react-hook-form para trabalhar com os erros setados no schema
+ * @param isLoading propriedade para exibir que está sendo solicitado uma requisição
+ */
+
 export const SignIn = ({ handleSubmit, onSubmit, register, errors, isLoading }: ISignIn) => (
   <main className={styles.wrapper}>
     <section className={styles.flex_col_gap}>
